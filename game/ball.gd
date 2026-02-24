@@ -1,5 +1,6 @@
 extends RigidBody2D
 
-@rpc("any_peer", 'call_local', 'reliable')
-func assume_owner(id):
-	set_multiplayer_authority(id)
+@onready var authority_label : Label = $Label
+
+func _process(_delta: float) -> void:
+	authority_label.text = str(get_multiplayer_authority())

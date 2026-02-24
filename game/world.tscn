@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://b3ryr2fy5mdfi"]
+
+[ext_resource type="Script" uid="uid://wx1cpa8v8tit" path="res://game/world.gd" id="1_4xpgs"]
+[ext_resource type="Texture2D" uid="uid://cip10lkjjmfv0" path="res://game/icon.svg" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://drmn0rjcqk056" path="res://game/ball.tscn" id="3_tvmmn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tvmmn"]
+bounce = 0.99
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3sb7"]
+size = Vector2(339, 20)
+
+[node name="World" type="Node2D" unique_id=913027012]
+script = ExtResource("1_4xpgs")
+
+[node name="Terrain" type="Node2D" parent="." unique_id=1913756760]
+
+[node name="Node2D" type="StaticBody2D" parent="Terrain" unique_id=545242584]
+position = Vector2(1, 37)
+collision_layer = 2
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_tvmmn")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Node2D" unique_id=1809298772]
+shape = SubResource("RectangleShape2D_f3sb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Terrain/Node2D" unique_id=390279877]
+position = Vector2(-1.1444092e-05, 0)
+scale = Vector2(2.0156248, 0.140625)
+texture = ExtResource("2_fj7yv")
+
+[node name="Node2D4" type="StaticBody2D" parent="Terrain" unique_id=1868785530]
+position = Vector2(1, -201.115)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Node2D4" unique_id=985424386]
+shape = SubResource("RectangleShape2D_f3sb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Terrain/Node2D4" unique_id=206362299]
+position = Vector2(-1.1444092e-05, 0)
+scale = Vector2(2.0156248, 0.140625)
+texture = ExtResource("2_fj7yv")
+
+[node name="Node2D2" type="StaticBody2D" parent="Terrain" unique_id=432974679]
+position = Vector2(140.225, -81.99)
+rotation = 1.5707964
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Node2D2" unique_id=495903357]
+shape = SubResource("RectangleShape2D_f3sb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Terrain/Node2D2" unique_id=2001090309]
+position = Vector2(20.24792, 0)
+scale = Vector2(2.3319986, 0.140625)
+texture = ExtResource("2_fj7yv")
+
+[node name="Node2D3" type="StaticBody2D" parent="Terrain" unique_id=1850732093]
+position = Vector2(-138.385, -81.99)
+rotation = 1.5707964
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Node2D3" unique_id=2138715839]
+position = Vector2(-4.51001, 0)
+shape = SubResource("RectangleShape2D_f3sb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Terrain/Node2D3" unique_id=1378358099]
+position = Vector2(-0.9391537, 0)
+scale = Vector2(2.6113942, 0.140625)
+texture = ExtResource("2_fj7yv")
+
+[node name="Node2D5" type="StaticBody2D" parent="Terrain" unique_id=1673926091]
+position = Vector2(-5.6150055, -261)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Node2D5" unique_id=975359495]
+shape = SubResource("RectangleShape2D_f3sb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Terrain/Node2D5" unique_id=233893037]
+position = Vector2(-1.1444092e-05, 0)
+scale = Vector2(2.0156248, 0.140625)
+texture = ExtResource("2_fj7yv")
+
+[node name="Node2D6" type="StaticBody2D" parent="Terrain" unique_id=800706009]
+position = Vector2(2, 95)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Node2D6" unique_id=1780649705]
+shape = SubResource("RectangleShape2D_f3sb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Terrain/Node2D6" unique_id=1994860369]
+position = Vector2(-1.1444092e-05, 0)
+scale = Vector2(2.0156248, 0.140625)
+texture = ExtResource("2_fj7yv")
+
+[node name="PlayerContainer" type="Node2D" parent="." unique_id=1838055955]
+
+[node name="BallContainer" type="Node2D" parent="." unique_id=333014803]
+
+[node name="Ball" parent="BallContainer" unique_id=645827843 instance=ExtResource("3_tvmmn")]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=2007917329]
+_spawnable_scenes = PackedStringArray("uid://bht7oj2b0l5ss")
+spawn_path = NodePath("../PlayerContainer")

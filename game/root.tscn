@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bf5y2tdd2wjlw"]
+
+[ext_resource type="Script" uid="uid://cvmcl0hdor6vb" path="res://game/main.gd" id="1_5xjvc"]
+[ext_resource type="PackedScene" uid="uid://6eoclhsx0qae" path="res://lobby/lobby_quick_connect.tscn" id="2_hfu78"]
+
+[node name="Root" type="Node2D" unique_id=224660153]
+script = ExtResource("1_5xjvc")
+
+[node name="LobbyQuickConnect" parent="." unique_id=619453629 instance=ExtResource("2_hfu78")]
+offset_left = 15.0
+offset_top = 9.0
+offset_right = 1935.0
+offset_bottom = 1089.0

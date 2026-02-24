@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bht7oj2b0l5ss"]
+
+[ext_resource type="Texture2D" uid="uid://cip10lkjjmfv0" path="res://game/icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://cxgw2y6f5c1tv" path="res://game/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dsbqjsxq2fth0" path="res://game/7.png.webp" id="3_i3pqv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(21, 184)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_du4nq"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("Shield:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Shield/Area2D:gravity_direction")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("Shield/Sprite2D:rotation")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
+[node name="Player" type="CharacterBody2D" unique_id=1679602725]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1691033397]
+shape = SubResource("CircleShape2D_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1425502136]
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("1_4flbx")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1304097041]
+
+[node name="Shield" type="Node2D" parent="." unique_id=2078055823]
+rotation = 1.5707964
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Shield" unique_id=1803424403]
+position = Vector2(19.215, 0)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("3_i3pqv")
+
+[node name="Area2D" type="Area2D" parent="Shield" unique_id=1166968540]
+collision_layer = 3
+collision_mask = 3
+priority = 1
+gravity_space_override = 1
+gravity = 1960.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shield/Area2D" unique_id=327662430]
+position = Vector2(103.26, 0)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=590688984]
+replication_config = SubResource("SceneReplicationConfig_du4nq")

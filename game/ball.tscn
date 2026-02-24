@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://drmn0rjcqk056"]
+
+[ext_resource type="Script" uid="uid://dhse8sgpg0qme" path="res://game/ball.gd" id="1_gxnrv"]
+[ext_resource type="Texture2D" uid="uid://cip10lkjjmfv0" path="res://game/icon.svg" id="2_mj72b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fj7yv"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_gxnrv"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Ball" type="RigidBody2D" unique_id=645827843]
+collision_layer = 3
+collision_mask = 3
+mass = 0.001
+can_sleep = false
+script = ExtResource("1_gxnrv")
+
+[node name="Label" type="Label" parent="." unique_id=1854273]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=683989061]
+shape = SubResource("CircleShape2D_fj7yv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=279974284]
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("2_mj72b")
+
+[node name="BallSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1764342379]
+replication_config = SubResource("SceneReplicationConfig_gxnrv")

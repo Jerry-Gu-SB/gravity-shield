@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://wx1cpa8v8tit" path="res://game/world.gd" id="1_4xpgs"]
 [ext_resource type="Texture2D" uid="uid://cip10lkjjmfv0" path="res://game/icon.svg" id="2_fj7yv"]
-[ext_resource type="PackedScene" uid="uid://drmn0rjcqk056" path="res://game/ball.tscn" id="3_tvmmn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tvmmn"]
 bounce = 0.99
@@ -107,8 +106,10 @@ texture = ExtResource("2_fj7yv")
 
 [node name="BallContainer" type="Node2D" parent="." unique_id=333014803]
 
-[node name="Ball" parent="BallContainer" unique_id=645827843 instance=ExtResource("3_tvmmn")]
-
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=2007917329]
 _spawnable_scenes = PackedStringArray("uid://bht7oj2b0l5ss")
 spawn_path = NodePath("../PlayerContainer")
+
+[node name="BallSpawner" type="MultiplayerSpawner" parent="." unique_id=548997737]
+_spawnable_scenes = PackedStringArray("uid://drmn0rjcqk056")
+spawn_path = NodePath("../BallContainer")

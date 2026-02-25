@@ -34,6 +34,10 @@ folder_colors={
 "res://game/": "red"
 }
 
+[global_group]
+
+Ball=""
+
 [input]
 
 ui_left={

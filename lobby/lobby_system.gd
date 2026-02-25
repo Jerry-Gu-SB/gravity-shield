@@ -284,6 +284,7 @@ func _network_create_multiplayer_peer(id: String):
 	
 	# NOTE: We now have a multiplayer peer, connect signals
 	multiplayer.peer_connected.connect(add_player_to_game)
+	multiplayer.peer_connected.connect(add_ball_to_game)
 	multiplayer.peer_disconnected.connect(remove_player_from_game)
 
 
@@ -383,6 +384,13 @@ func generate_random_name() -> String:
 
 	return Emi1[r1] + Emi2[r2] + Emi3[r3]
 
+func add_ball_to_game(id: int) -> void:
+	if get_tree().get_node_count_in_group('Ball') >= 1: return
+	var has_id: bool = id in get_tree().get_nodes_in_group('Ball').map(func(node): int(node.name))
+	if has_id == true:
+		return
+	var world: World = get_tree().get_first_node_in_group('World')
+	world.add_ball_to_world(id)
 
 func add_player_to_game(id: int) -> void:
 	var has_id: bool = id in get_tree().get_nodes_in_group('Players').map(func(node): int(node.name))

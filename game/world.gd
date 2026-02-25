@@ -16,7 +16,7 @@ func _ready() -> void:
 	add_to_group('World')
 	LobbySystem.add_player_to_game(multiplayer.get_unique_id())
 	if LobbySystem.host != null:
-		add_ball_to_world(int(LobbySystem.ws_peer_id))
+		LobbySystem.add_ball_to_game(multiplayer.get_unique_id())
 
 @rpc("any_peer", 'call_local', 'reliable')
 func broadcast_player_death(id: String):
@@ -34,10 +34,9 @@ func add_player_to_world(peer_id: int):
 	player_container.add_child(new_player, true)
 
 func add_ball_to_world(peer_id: int) -> void:
-	if ball_container.get_child_count() >= 1: return
-	
-	var new_ball := ball_scene.instantiate()
-	new_ball.set_multiplayer_authority(peer_id)
+	var new_ball: Ball = ball_scene.instantiate()
+	new_ball.name = str(peer_id)
+#	new_ball.set_multiplayer_authority(peer_id)
 	new_ball.position = Vector2(randi_range(-2, 2), randi_range(-2, 2)) * 10
 	
 	ball_container.add_child(new_ball, true)

@@ -113,3 +113,4 @@ spawn_path = NodePath("../PlayerContainer")
 [node name="BallSpawner" type="MultiplayerSpawner" parent="." unique_id=548997737]
 _spawnable_scenes = PackedStringArray("uid://drmn0rjcqk056")
 spawn_path = NodePath("../BallContainer")
+spawn_limit = 1

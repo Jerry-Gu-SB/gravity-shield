@@ -1,8 +1,8 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 class_name Player
 
-const MOVE_SPEED: int = 1
+const MOVE_SPEED: int = 100
 const PI_OVER_2: float = PI / 2
 
 var angle_respect_to_mouse: float = 0
@@ -30,16 +30,15 @@ func _unhandled_input(event: InputEvent) -> void:
 
 		grav_direction_arrow.rotation = angle_respect_to_mouse
 
-func _physics_process(_delta: float) -> void:
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if Input.is_action_pressed("ui_right"):
-		velocity.x += MOVE_SPEED
+		state.apply_central_force(Vector2(MOVE_SPEED, 0 ))
 	if Input.is_action_pressed("ui_left"):
-		velocity.x -= MOVE_SPEED
+		state.apply_central_force(Vector2(-MOVE_SPEED, 0 ))
 	if Input.is_action_pressed("ui_down"):
-		velocity.y += MOVE_SPEED
+		state.apply_central_force(Vector2(0, MOVE_SPEED))
 	if Input.is_action_pressed("ui_up"):
-		velocity.y -= MOVE_SPEED
-	move_and_slide()
+		state.apply_central_force(Vector2(0, -MOVE_SPEED))
 
 func _process(_delta: float) -> void:
 	var mouse_position: Vector2 = get_global_mouse_position()

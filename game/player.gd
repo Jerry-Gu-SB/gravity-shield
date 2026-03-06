@@ -2,7 +2,7 @@ extends RigidBody2D
 
 class_name Player
 
-const MOVE_SPEED: int = 100
+const MOVE_SPEED: int = 1000
 const PI_OVER_2: float = PI / 2
 
 var angle_respect_to_mouse: float = 0

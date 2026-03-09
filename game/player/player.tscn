@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cip10lkjjmfv0" path="res://icon.svg" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cxgw2y6f5c1tv" path="res://game/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://dsbqjsxq2fth0" path="res://game/player/7.png.webp" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://cimh53vdysvrd" path="res://game/player/player_ui.gd" id="4_a4w0n"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_du4nq"]
 bounce = 0.97
@@ -25,6 +26,10 @@ properties/2/replication_mode = 1
 properties/3/path = NodePath("Shield/Sprite2D:rotation")
 properties/3/spawn = true
 properties/3/replication_mode = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_8soms"]
+line_spacing = 0.0
+font_size = 40
 
 [node name="Player" type="RigidBody2D" unique_id=845245227]
 collision_layer = 3
@@ -67,3 +72,22 @@ shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=590688984]
 replication_config = SubResource("SceneReplicationConfig_du4nq")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1971785795]
+script = ExtResource("4_a4w0n")
+
+[node name="Goal1_Label" type="Label" parent="UI" unique_id=1760483930]
+offset_left = -952.0
+offset_top = -536.0
+offset_right = -872.0
+offset_bottom = -456.0
+text = "0"
+label_settings = SubResource("LabelSettings_8soms")
+
+[node name="Goal2_Label" type="Label" parent="UI" unique_id=933068013]
+offset_left = -952.0
+offset_top = -536.0
+offset_right = -872.0
+offset_bottom = -456.0
+text = "0"
+label_settings = SubResource("LabelSettings_8soms")

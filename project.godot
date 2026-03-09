@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 LobbySystem="*uid://blphobuppuw3y"
+GameState="*uid://cumw2lhogvgxo"
 
 [display]
 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqk86ot3lh14y"]
 
-[ext_resource type="Texture2D" uid="uid://cip10lkjjmfv0" path="res://game/icon.svg" id="1_dppi4"]
+[ext_resource type="Texture2D" uid="uid://cip10lkjjmfv0" path="res://icon.svg" id="1_dppi4"]
+[ext_resource type="Script" uid="uid://cex78162qo3v4" path="res://game/goal.gd" id="1_vjdyu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xpgs"]
 size = Vector2(64, 384)
@@ -17,6 +18,7 @@ a = Vector2(-32, -192)
 b = Vector2(32, -192)
 
 [node name="Goal" type="Node2D" unique_id=1323479902]
+script = ExtResource("1_vjdyu")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1253382531]
 

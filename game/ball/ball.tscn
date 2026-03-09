@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://drmn0rjcqk056"]
 
-[ext_resource type="Script" uid="uid://dhse8sgpg0qme" path="res://game/ball.gd" id="1_gxnrv"]
-[ext_resource type="Texture2D" uid="uid://cip10lkjjmfv0" path="res://game/icon.svg" id="2_mj72b"]
+[ext_resource type="Script" uid="uid://dhse8sgpg0qme" path="res://game/ball/ball.gd" id="1_gxnrv"]
+[ext_resource type="Texture2D" uid="uid://cip10lkjjmfv0" path="res://icon.svg" id="2_mj72b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fj7yv"]
 

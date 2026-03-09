@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://b3ryr2fy5mdfi"]
 
-[ext_resource type="Script" uid="uid://wx1cpa8v8tit" path="res://game/world.gd" id="1_4xpgs"]
+[ext_resource type="Script" uid="uid://wx1cpa8v8tit" path="res://game/world/world.gd" id="1_4xpgs"]
 [ext_resource type="PackedScene" uid="uid://bqk86ot3lh14y" path="res://game/goal.tscn" id="3_4xpgs"]
-[ext_resource type="Texture2D" uid="uid://iijc1bw7vuo6" path="res://game/2D Soccer.png" id="3_tvmmn"]
-[ext_resource type="PackedScene" uid="uid://drmn0rjcqk056" path="res://game/ball.tscn" id="4_4xpgs"]
+[ext_resource type="Texture2D" uid="uid://iijc1bw7vuo6" path="res://game/world/2D Soccer.png" id="3_tvmmn"]
+[ext_resource type="PackedScene" uid="uid://drmn0rjcqk056" path="res://game/ball/ball.tscn" id="4_4xpgs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tvmmn"]
 texture = ExtResource("3_tvmmn")
@@ -499,7 +499,6 @@ shape = SubResource("RectangleShape2D_tvmmn")
 [node name="BallContainer" type="Node2D" parent="." unique_id=333014803]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=2007917329]
-_spawnable_scenes = PackedStringArray("uid://bht7oj2b0l5ss")
 spawn_path = NodePath("../PlayerContainer")
 
 [node name="BallSpawner" type="MultiplayerSpawner" parent="." unique_id=548997737]

@@ -2,7 +2,7 @@ extends Node
 
 @export var use_quick_connect: bool = true
 
-var game_world: PackedScene = preload("res://game/world.tscn")
+var game_world: PackedScene = preload("uid://b3ryr2fy5mdfi")
 
 func _ready() -> void:
 	get_node_or_null("LobbyQuickConnect").show()

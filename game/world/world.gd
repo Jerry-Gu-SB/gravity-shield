@@ -9,8 +9,8 @@ signal signal_player_kill(id)
 @onready var ball_container: Node2D = $BallContainer
 @onready var ball_spawner: MultiplayerSpawner = $BallSpawner
 
-var player_scene: PackedScene = preload("res://game/player.tscn")
-var ball_scene: PackedScene = preload("res://game/ball.tscn")
+var player_scene: PackedScene = preload("uid://bht7oj2b0l5ss")
+var ball_scene: PackedScene = preload("uid://drmn0rjcqk056")
 
 func _ready() -> void:
 	add_to_group('World')

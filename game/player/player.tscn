@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bht7oj2b0l5ss"]
 
-[ext_resource type="Texture2D" uid="uid://cip10lkjjmfv0" path="res://game/icon.svg" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://cxgw2y6f5c1tv" path="res://game/player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://dsbqjsxq2fth0" path="res://game/7.png.webp" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://cip10lkjjmfv0" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://cxgw2y6f5c1tv" path="res://game/player/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dsbqjsxq2fth0" path="res://game/player/7.png.webp" id="3_i3pqv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_du4nq"]
 bounce = 0.97

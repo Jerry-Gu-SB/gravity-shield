@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bqk86ot3lh14y"]
+
+[ext_resource type="Texture2D" uid="uid://cip10lkjjmfv0" path="res://game/icon.svg" id="1_dppi4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xpgs"]
+size = Vector2(64, 384)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dppi4"]
+bounce = 0.99
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_aseec"]
+a = Vector2(-32, -192)
+b = Vector2(-32, 192)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tvmmn"]
+a = Vector2(-32, -192)
+b = Vector2(32, -192)
+
+[node name="Goal" type="Node2D" unique_id=1323479902]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1253382531]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=379347970]
+shape = SubResource("RectangleShape2D_4xpgs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=570162513]
+physics_material_override = SubResource("PhysicsMaterial_dppi4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=845884065]
+shape = SubResource("SegmentShape2D_aseec")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=308168795]
+physics_material_override = SubResource("PhysicsMaterial_dppi4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=405214171]
+shape = SubResource("SegmentShape2D_tvmmn")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=472532108]
+physics_material_override = SubResource("PhysicsMaterial_dppi4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1184089855]
+position = Vector2(0, 384)
+shape = SubResource("SegmentShape2D_tvmmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1704062696]
+position = Vector2(-32, 0)
+scale = Vector2(0.0625, 3)
+texture = ExtResource("1_dppi4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1427602916]
+position = Vector2(0, 192)
+scale = Vector2(0.50000024, 0.06249994)
+texture = ExtResource("1_dppi4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=652455770]
+position = Vector2(0, -192)
+scale = Vector2(0.50000024, 0.06249994)
+texture = ExtResource("1_dppi4")

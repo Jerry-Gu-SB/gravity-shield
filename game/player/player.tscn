@@ -47,8 +47,6 @@ shape = SubResource("CircleShape2D_onrkg")
 scale = Vector2(0.155, 0.155)
 texture = ExtResource("1_4flbx")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1304097041]
-
 [node name="Shield" type="Node2D" parent="." unique_id=2078055823]
 rotation = 1.5707964
 metadata/_edit_group_ = true

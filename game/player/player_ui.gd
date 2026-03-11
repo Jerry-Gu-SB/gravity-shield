@@ -7,7 +7,6 @@ func _ready() -> void:
 	GameState.connect("goal_scored", handle_goal_scored)
 	
 func handle_goal_scored(goal_name: String, point_value: int):
-	print("GOOOOOAL: ", goal_name)
 	if "1" in goal_name:
 		goal1_label.text = str(int(goal1_label.text) + point_value)
 	if "2" in goal_name:

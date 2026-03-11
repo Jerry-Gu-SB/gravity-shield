@@ -514,3 +514,7 @@ position = Vector2(672, 0)
 rotation = 3.1415927
 
 [node name="Ball" parent="." unique_id=645827843 instance=ExtResource("4_4xpgs")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1870573981]
+position = Vector2(-672, 0)
+offset = Vector2(675, 0)

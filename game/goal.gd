@@ -10,4 +10,4 @@ func _ready() -> void:
 	
 func ball_entered_area_2d(body: Node2D):
 	if body.is_in_group("Ball"):
-		GameState.emit_signal("goal_scored", name, 1)
+		GameState.goal_scored.emit(name, 1)
